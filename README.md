@@ -13,7 +13,8 @@ import java.util.Scanner;
 public class ParImpar {
     
     public static String verificarParImpar(int num) {
-        /* Escribe tu codigo dentro de esta funcion *
+      /* Escribe tu codigo en este espacio */
+            
     }
 
     /* No mover nada */
@@ -28,11 +29,13 @@ public class ParImpar {
         }
     }
     
-    public static void main(String[] args) {
-        /* Escribe tu codigo en este espacio /*
-         
+    public static void main(String[] args) {         
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Ingrese un número entero positivo: ");
+        int num = scanner.nextInt();
 
-        // No borrar
+        /*-- No borrar --*/
         String resultado = verificarParImpar(num);
         System.out.println(resultado);
         
@@ -65,7 +68,6 @@ public class SumaArray {
         }
         System.out.println("Tu resultado es: " + resultadoObtenido);
         
-        // Comparamos el resultado obtenido con el esperado
         if (resultadoObtenido == resultadoEsperado) {
             System.out.println("Test passed.");
         } else {
