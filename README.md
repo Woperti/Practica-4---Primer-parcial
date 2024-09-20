@@ -8,29 +8,28 @@ Copia el siguiente codigo en tu editor:
 Copie el siguiente codigo:
 
 ```java
-import java.util.Scanner;
-
 public class ParImpar {
-    
     public static String verificarParImpar(int num) {
       /* Escribe tu codigo en este espacio */
         if(num % 2 == 0) {
-            return "Es par";
+            return String.format("El numero %d es par.", num);
         } else {
-            return "Es impar";
+            return String.format("El numero %d es impar.", num);
         }     
     }
 
-    public static void testParImpar(int num, String resultadoEsperado) {
-        String resultadoObtenido = verificarParImpar(num);
-        System.out.println("Tu resultado es: " + resultadoObtenido);
-        
-        if (resultadoObtenido.equals(resultadoEsperado)) {
-            System.out.println("Test passed.");
-        } else {
-            System.out.println("Test case not passed. Se esperaba: " + resultadoEsperado);
-        }
+   public static void testParImpar(int num, String resultadoEsperado) {
+    String resultadoObtenido = verificarParImpar(num).trim();
+    resultadoEsperado = resultadoEsperado.trim();
+
+    System.out.println("Tu resultado es: " + resultadoObtenido);
+
+    if (resultadoObtenido.equals(resultadoEsperado)) {
+        System.out.println("Test passed.");
+    } else {
+        System.out.println("Test case not passed. Se esperaba: " + resultadoEsperado + ", pero se obtuvo: " + resultadoObtenido);
     }
+  }
     
     public static void main(String[] args) {         
         
