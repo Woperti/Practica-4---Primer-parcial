@@ -14,10 +14,13 @@ public class ParImpar {
     
     public static String verificarParImpar(int num) {
       /* Escribe tu codigo en este espacio */
-            
+        if(num % 2 == 0) {
+            return "Es par";
+        } else {
+            return "Es impar";
+        }     
     }
 
-    /* No mover nada */
     public static void testParImpar(int num, String resultadoEsperado) {
         String resultadoObtenido = verificarParImpar(num);
         System.out.println("Tu resultado es: " + resultadoObtenido);
@@ -30,14 +33,6 @@ public class ParImpar {
     }
     
     public static void main(String[] args) {         
-        Scanner scanner = new Scanner(System.in);
-        
-        System.out.print("Ingrese un número entero positivo: ");
-        int num = scanner.nextInt();
-
-        /*-- No borrar --*/
-        String resultado = verificarParImpar(num);
-        System.out.println(resultado);
         
         System.out.println("\n--- Ejecutando tests ---");
         testParImpar(4, "El numero 4 es par.");
@@ -52,22 +47,20 @@ public class ParImpar {
    Copie el siguiente codigo.
 
 ```java
-  import java.util.Scanner;
-
 public class SumaArray {
 
-    public static int sumarArray() {
+    public static int sumarArray(int[] array) {
        /* Escriba su codigo aqui */
-    
+        int sum = 0;
+        for(int i = 0; i < array.length; i++) {
+            sum += array[i];
+        }
+        return sum;
     }
 
     public static void testSumarArray(int[] array, int resultadoEsperado) {
-        int resultadoObtenido = 0;
-        for (int i : array) {
-            resultadoObtenido += i;
-        }
-        System.out.println("Tu resultado es: " + resultadoObtenido);
-        
+        int resultadoObtenido = sumarArray(array);
+         
         if (resultadoObtenido == resultadoEsperado) {
             System.out.println("Test passed.");
         } else {
@@ -76,8 +69,6 @@ public class SumaArray {
     }
 
     public static void main(String[] args) {
-        int resultado = sumarArray();
-        
         System.out.println("\n--- Ejecutando tests ---");
         testSumarArray(new int[]{1, 2, 3, 4, 5}, 15);
         testSumarArray(new int[]{10, 20, 30}, 60);
